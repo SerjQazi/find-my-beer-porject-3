@@ -1,0 +1,27 @@
+@import 'setup';
+
+.wrapper {
+  max-width: 1600px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .selectContainer {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    select {
+      margin: 10px auto;
+      padding: 5px;
+    }
+  }
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 20px auto;
+}
