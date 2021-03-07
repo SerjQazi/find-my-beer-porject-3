@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import './styles/styles.scss';
 import axios from 'axios';
-import Header from './Header.js'
+import Header from './Header.jsx';
+import Card from './Card.jsx';
+import Statenames from "./Statenames.jsx";
+
 
 // OpenBrewerDB API base URL https://api.openbrewerydb.org/breweries
 
@@ -42,22 +45,69 @@ import Header from './Header.js'
 // finally a footer component
 
 function App() {
+
+  const [brewery, setBrewery] = useState([])
+  const [state, setState] = useState('');
+
   useEffect(() => {
     axios({
       method: 'GET',
       url: 'https://api.openbrewerydb.org/breweries',
       dataResponse: 'JSON',
       params: {
-        by_state: 'new_york',
+        by_state: state,
       },
-    }).then((response) => {
-      console.log(response);
-    });
-  }, []);
+    })
+      .then((response) => {
+        // console.log(response.data);
+
+        response = response.data;
+
+        setBrewery (response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [state]);
 
   return (
-    <div className='App'>
-      <Header />
+    <div className="wrapper">
+    <Header onChange={(e) => setState(e.target.value)} />
+      <Statenames />
+    
+      <div className="mainContentContainer">
+        {!state
+          ? 'Select a State'
+          : brewery.map((breweries) => {
+              const {
+                id,
+                brewery_type,
+                name,
+                street,
+                postal_code,
+                phone,
+                city,
+                state,
+                country,
+                website_url,
+              } = breweries;
+
+              return (
+                <Card
+                  key={id}
+                  type={brewery_type}
+                  name={name}
+                  address={street}
+                  postal={postal_code}
+                  phone={phone}
+                  city={city}
+                  state={state}
+                  country={country}
+                  url={website_url}
+                />
+              );
+            })}
+      </div>
     </div>
   );
 }
