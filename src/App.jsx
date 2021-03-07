@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import './styles/styles.scss';
 import axios from 'axios';
-import Header from './Header.jsx';
-import Card from './Card.jsx';
-import Statenames from "./Statenames.jsx";
-
+import Header from './Header';
+import Card from './Card';
 
 // OpenBrewerDB API base URL https://api.openbrewerydb.org/breweries
 
@@ -73,7 +71,6 @@ function App() {
   return (
     <div className="wrapper">
     <Header onChange={(e) => setState(e.target.value)} />
-      <Statenames />
     
       <div className="mainContentContainer">
         {!state
