@@ -1,10 +1,11 @@
 @import 'setup';
+@import url('https://fonts.googleapis.com/css2?family=Baumans&family=Bungee+Shade&family=Poiret+One&display=swap');
 
 .wrapper {
   max-width: 1600px;
   width: 90%;
   margin: 0 auto;
-  border: 2px solid red;
+  // border: 2px solid red;
 }
 
 .headerContainer {
@@ -18,6 +19,9 @@
     select {
       margin: 10px auto;
       padding: 5px;
+      font-size: 2.5rem;
+      border: 5px solid red;
+      border-radius: 15px;
     }
   }
 }
@@ -26,52 +30,158 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 57vh;
+  border: 8px solid green;
+  border-radius: 50px;
+  padding: 10px;
+  overflow-y: hidden ;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+width: 0px;
+}
+
+
+
+.mainContainer {
+  margin: 10px;
+  position: relative;
+  width: calc(100% / 5 - 20px);
+  height: 320px;
 }
 
 .cardContainer {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: center;
-  border: 2px solid blue;
-  width: calc(100% / 5 - 40px);
-  margin: 20px;
-}
-
-.frontOfCard {
-  border: 1px solid purple;
-  padding: 20px;
-  // width: 60%;
-}
-
-.backOfCard {
-  border: 1px solid green;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 5rem;
-  margin: 20px auto;
-}
-
-h2 {
-  font-size: 2.2rem;
-  text-align: center;
-}
-
-li {
-  font-size: 2rem;
-  list-style: none;
-    a{
-      text-decoration: none;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease-in-out;
+    &:hover {
+      transform: rotateY(180deg);
     }
 }
 
-.url {
+.frontOfCard,
+.backOfCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  backface-visibility: hidden;
+  border: 8px solid #6d597a;
+}
+
+
+.frontOfCard {
+  background: #eaac8b;
+}
+
+.backOfCard {
+  background: #e56b6f;
+  transform: rotateY(180deg);
+}
+
+h1 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 6rem;
+  line-height: 1;
+  margin: 20px auto;
+    svg {
+      transform:translate(15%, 15%);
+    }
+}
+
+h2 {
+  font-family: 'Baumans', cursive;
+  margin: 10px 5px;
+  font-size: 2.2rem;
   text-align: center;
+  z-index: 10;
+}
+
+ul {
+  z-index: 10;
+}
+
+li {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  display: flex;
+  font-size: 1.8rem;
+  margin: 5px 0;
+  list-style: none;
+  z-index: 10;
+  a{
+    text-decoration: none;
+    }
+}
+
+.address {
+  font-size: 1.8rem;
 }
 
 .icon {
-  padding: 10px;
-  font-size: 2.2rem;
+  padding-right: 20px;
+  font-size: 2.5rem;
+}
+
+.beerBackground {
+  position: absolute;
+  font-size: calc(11rem + 8vw);
+  left: 0;
+  top: 1;
+  color: rgba(128,128,128,0.3);
+  z-index: 0;
+}
+
+@media (max-width: 1480px) {
+  .beerBackground{
+    font-size: calc(14rem + 9vw);
+  }
+
+  .mainContainer {
+    width: calc(100% / 4 - 20px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .beerBackground{
+    font-size: calc(13rem + 13vw);
+  }
+
+  .mainContainer {
+    width: calc(100% / 3 - 20px);
+  }
+}
+
+@media (max-width: 880px) {
+  .beerBackground{
+    font-size: calc(13rem + 21vw);
+  }
+
+  .mainContainer {
+    width: calc(100% / 2 - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    text-align: center;
+  }
+
+  .beerBackground{
+    font-size: calc(18rem + 22vw);
+    left: 55px;
+  }
+  .mainContainer {
+    width: calc(100% / 1 - 20px);
+  }
 }

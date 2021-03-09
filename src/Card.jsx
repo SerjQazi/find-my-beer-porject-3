@@ -5,83 +5,112 @@ import { FiPhone } from 'react-icons/fi';
 import { TiBeer } from 'react-icons/ti';
 import { IoIosGlobe } from 'react-icons/io';
 import { SiGooglemaps } from 'react-icons/si';
+import { IoBeerOutline } from 'react-icons/io5';
 
+//todo: the destructured info is passes into this component as props, this is returns the <div> and <li> needed to display the card.
 
 function Card({type, name, address, postal, phone, city, state,country, url}) {
   return (
-    <div className="cardContainer">
-      <h2>{name}</h2>
-      <div className="frontOfCard">
-        <ul>
-          <li>
-            <span className="icon">
-              <GrMapLocation />
-            </span>
-            {address}
-          </li>
+    <div className="mainContainer">
+      <div className="cardContainer">
+        <div className="frontOfCard">
+          <IoBeerOutline className="beerBackground" />
+          <h2>{name}</h2>
 
-          <li>
-            <span className="icon">
-              <GiModernCity />
-            </span>
-            {city}
-          </li>
+          <ul>
+            {address && (
+              <li className="address">
+                <span className="icon">
+                  <GrMapLocation />
+                </span>
+                <span>{address}</span>
+              </li>
+            )}
 
-          <li>
-            <span className="icon">
-              <SiGooglemaps />
-            </span>
-            {state}
-          </li>
+            {city && (
+              <li>
+                <span className="icon">
+                  <GiModernCity />
+                </span>
+                <span>{city}</span>
+              </li>
+            )}
 
-          <li>
-            <span className="icon">
-              <FaGlobeAmericas />
-            </span>
-            {country}
-          </li>
-        </ul>
+            {state && (
+              <li>
+                <span className="icon">
+                  <SiGooglemaps />
+                </span>
+                {state}
+              </li>
+            )}
+
+            {country && (
+              <li>
+                <span className="icon">
+                  <FaGlobeAmericas />
+                </span>
+                <span>{country}</span>
+              </li>
+            )}
+          </ul>
+        </div>
+        {/*end of frontOfCard */}
+
+        <div className="backOfCard">
+          <IoBeerOutline className="beerBackground" />
+          <ul>
+            {type && (
+              <li>
+                <span className="icon">
+                  <TiBeer />
+                </span>
+                <span>{type.toUpperCase()}</span>
+              </li>
+            )}
+
+            {address && (
+              <li>
+                <span className="icon">
+                  <GrMapLocation />
+                </span>
+                <span>{address}</span>
+              </li>
+            )}
+
+            {postal && (
+              <li>
+                <span className="icon">
+                  <GiZipper />
+                </span>
+                <span>{postal}</span>
+              </li>
+            )}
+
+            {phone && (
+              <li>
+                <span className="icon">
+                  <FiPhone />
+                </span>
+                <span>{phone}</span>
+              </li>
+            )}
+
+            {url && (
+              <li>
+                <span className="icon">
+                  <IoIosGlobe />
+                </span>
+                <span className="url">
+                  <a href={url}>Website</a>
+                </span>
+              </li>
+            )}
+          </ul>
+        </div>
+        {/*end of backOfCard */}
       </div>
-
-      <div className="backOfCard">
-        <ul>
-          <li></li>
-          <li>
-            <span className="icon">
-              <TiBeer />
-            </span>{' '}
-            {type.toUpperCase()}
-          </li>
-
-          <li>
-            <span className="icon">
-              <GrMapLocation />
-            </span>
-            {address}
-          </li>
-
-          <li>
-            <span className="icon">
-              <GiZipper />
-            </span>
-            {postal}
-          </li>
-
-          <li>
-            <span className="icon">
-              <FiPhone />
-            </span>
-            {phone}
-          </li>
-
-          <li className="url">
-            <span className="icon">
-              <IoIosGlobe />
-            </span>
-            <a href={url}>Website</a>
-          </li>
-        </ul>
-      </div>
+      {/*end of cardContainer*/}
     </div>
   );
 }

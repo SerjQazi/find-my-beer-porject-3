@@ -1,4 +1,5 @@
 function Statenames() {
+  //todo: map thru an array of state names, to dynamically append them to the select menu
   const stateNames = [
     'Alabama',
     'Alaska',
