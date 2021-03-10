@@ -1,13 +1,13 @@
-import Statenames from  './Statenames'
+import Statenames from './Statenames';
 import { IoBeer } from 'react-icons/io5';
 
 function Header(props) {
-  //todo: 
+  //todo:
   return (
     <div className="headerContainer">
       <h1>
-        Find My Beer
         <IoBeer />
+        Find My Beer
       </h1>
       <form action=" ">
         <div className="selectContainer">

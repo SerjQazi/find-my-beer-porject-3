@@ -41,7 +41,9 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <SiGooglemaps />
                 </span>
+                <span>
                 {state}
+                </span>
               </li>
             )}
 
@@ -97,12 +99,12 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
             )}
 
             {url && (
-              <li>
+              <li className="url">
                 <span className="icon">
                   <IoIosGlobe />
                 </span>
-                <span className="url">
-                  <a href={url}>Website</a>
+                <span>
+                <a href={url}>Website</a>
                 </span>
               </li>
             )}
