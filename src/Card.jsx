@@ -9,6 +9,8 @@ import { IoBeerOutline } from 'react-icons/io5';
 
 //todo: the destructured info is passes into this component as props, this is returns the <div> and <li> needed to display the card.
 
+//todo: check to see if API returns a property, if not... don't display the li
+
 function Card({type, name, address, postal, phone, city, state,country, url}) {
   return (
     <div className="mainContainer">
@@ -41,9 +43,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <SiGooglemaps />
                 </span>
-                <span>
-                {state}
-                </span>
+                <span>{state}</span>
               </li>
             )}
 
@@ -99,12 +99,12 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
             )}
 
             {url && (
-              <li className="url">
+              <li>
                 <span className="icon">
                   <IoIosGlobe />
                 </span>
-                <span>
-                <a href={url}>Website</a>
+                <span className="url">
+                  <a href={url}>Website</a>
                 </span>
               </li>
             )}

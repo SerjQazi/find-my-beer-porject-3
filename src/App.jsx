@@ -3,18 +3,7 @@ import './styles/styles.scss';
 import axios from 'axios';
 import Header from './Header';
 import Card from './Card';
-
-// OpenBrewerDB API base URL https://api.openbrewerydb.org/breweries
-
-
-//? when the user selects the state, and city we will filter by city to display the information.
-
-// that favorite object will be displayed below the main section
-
-// component for favorite section, when button is clicked, that card selected by ID will be stored in an object
-
-// finally a footer component
-
+import Footer from './Footer';
 
 function App() {
   //todo: using a useState store the data from the API (brewery)
@@ -46,48 +35,51 @@ function App() {
   }, [state]);
 
   return (
-    <div className="wrapper">
-      {/**when the user has selected something from the dropdown, get the value from the dropdown and (update) setState */}
-      <Header onChange={(e) => setState(e.target.value)} />
+    <>
+    <Header onChange={(e) => setState(e.target.value)} />
+      <div className="wrapper">
+        {/**when the user has selected something from the dropdown, get the value from the dropdown and (update) setState */}
 
-      {/* a mainContentContainer that contains all the cards that will be displayed on the page */}
-      <div className="mainContentContainer">
-        {/**before the user has made a selection, disply a message for the user to make a selection 
-         * using a ternary operator, display the initial load message that asks the user to pick a state*/}
-        {!state
-          ? 'Select a State'
-          : brewery.map((breweries) => {
-            //todo: after mapping thru the data received from the API, destructure the info needed
-            const {
-              id,
-              brewery_type,
-              name,
-              street,
-              postal_code,
-              phone,
-              city,
-              state,
-              country,
-              website_url,
-            } = breweries;
+        {/* a mainContentContainer that contains all the cards that will be displayed on the page */}
+        <div className="mainContentContainer">
+          {/**before the user has made a selection, disply a message for the user to make a selection 
+           * using a ternary operator, display the initial load message that asks the user to pick a state*/}
+          {!state
+            ? 'Select a State'
+            : brewery.map((breweries) => {
+              //todo: after mapping thru the data received from the API, destructure the info needed
+              const {
+                id,
+                brewery_type,
+                name,
+                street,
+                postal_code,
+                phone,
+                city,
+                state,
+                country,
+                website_url,
+              } = breweries;
 
-            return (
-              <Card
-                key={id}
-                type={brewery_type}
-                name={name}
-                address={street}
-                postal={postal_code}
-                phone={phone}
-                city={city}
-                state={state}
-                country={country}
-                url={website_url}
-              />
-            );
-          })}
-      </div>
-    </div>
+              return (
+                <Card
+                  key={id}
+                  type={brewery_type}
+                  name={name}
+                  address={street}
+                  postal={postal_code}
+                  phone={phone}
+                  city={city}
+                  state={state}
+                  country={country}
+                  url={website_url}
+                />
+              );
+            })}
+        </div> {/**end of mainContentContainer */}
+      </div> {/**end of wrapper div */}
+        <Footer />
+    </>
   );
 }
 

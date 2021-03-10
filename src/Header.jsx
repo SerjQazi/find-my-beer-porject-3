@@ -6,8 +6,8 @@ function Header(props) {
   return (
     <div className="headerContainer">
       <h1>
-        <IoBeer />
         Find My Beer
+        <IoBeer />
       </h1>
       <form action=" ">
         <div className="selectContainer">
