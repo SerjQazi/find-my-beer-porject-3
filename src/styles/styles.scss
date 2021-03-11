@@ -86,6 +86,7 @@ width: 0px;
   border-radius: 50px;
   backface-visibility: hidden;
   border: 8px solid #264653;
+  transform: translate3d(0,0,0);
 }
 
 .frontOfCard {
@@ -103,7 +104,6 @@ h1 {
   line-height: 1;
   margin: 140px 0 25px 0;
   color: #e9c46a;
-  // width: 50%;
     svg {
       transform:translate(15%, 15%);
     }
@@ -210,8 +210,5 @@ span {
 
   .mainContainer {
     width: calc(100% / 1 - 20px);
-  }
-  .welcomeTxt {
-    font-size: 3rem;
   }
 }
