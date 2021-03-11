@@ -41,7 +41,6 @@
   animation: ellipsisThree steps(5,end) 2s infinite;
 }
 
-
 @keyframes ellipsisOne {
   0% { opacity: 0; }
   25% { opacity: 1; }
@@ -49,6 +48,7 @@
   75% {opacity: 1; }
   100% {opacity: 1; }
 }
+
 @keyframes ellipsisTwo {
   0% { opacity: 0; }
   25% { opacity: 0; }
