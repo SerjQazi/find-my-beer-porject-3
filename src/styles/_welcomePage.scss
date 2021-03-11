@@ -24,7 +24,6 @@
 .iconOne,
 .iconTwo,
 .iconThree {
-  
   font-size: 8rem;
   opacity: 0;
 }
@@ -45,16 +44,16 @@
   0% { opacity: 0; }
   25% { opacity: 1; }
   50% { opacity: 1; }
-  75% {opacity: 1; }
-  100% {opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 1; }
 }
 
 @keyframes ellipsisTwo {
   0% { opacity: 0; }
   25% { opacity: 0; }
   50% { opacity: 1; }
-  75% {opacity: 1; }
-  100% {opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 1; }
 }
 
 @keyframes ellipsisThree {
@@ -62,7 +61,7 @@
   25% { opacity: 0; }
   50% { opacity: 0; }
   75% { opacity: 1; }
-  100% {opacity: 1; }
+  100% { opacity: 1; }
 }
 
 @media (max-width: 600px) {
