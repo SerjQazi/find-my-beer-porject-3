@@ -46,7 +46,7 @@ function App() {
            * using a ternary operator, display the initial load message that asks the user to pick a state*/}
           {!state
             ? 'Select a State'
-            : brewery.map((breweries) => {
+            : brewery.map((breweries, index) => {
               //todo: after mapping thru the data received from the API, destructure the info needed
               const {
                 id,
@@ -73,6 +73,7 @@ function App() {
                   state={state}
                   country={country}
                   url={website_url}
+                  tabIndex= {index}
                 />
               );
             })}

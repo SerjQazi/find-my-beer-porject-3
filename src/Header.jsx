@@ -11,7 +11,7 @@ function Header(props) {
       </h1>
       <form action=" ">
         <div className="selectContainer">
-          <label htmlFor="selectState"></label>
+          <label className="srOnly" htmlFor="selectState">Select You State</label>
           <select
             onChange={props.onChange}
             defaultValue=""

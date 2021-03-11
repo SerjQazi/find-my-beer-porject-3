@@ -11,10 +11,10 @@ import { IoBeerOutline } from 'react-icons/io5';
 
 //todo: check to see if API returns a property, if not... don't display the li
 
-function Card({type, name, address, postal, phone, city, state,country, url}) {
+function Card({type, name, address, postal, phone, city, state,country, url, tabIndex}) {
   return (
     <div className="mainContainer">
-      <div className="cardContainer">
+      <div tabIndex={tabIndex + 1} className="cardContainer">
         <div className="frontOfCard">
           <IoBeerOutline className="beerBackground" />
           <h2>{name}</h2>
@@ -25,7 +25,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <GrMapLocation />
                 </span>
-                <span>{address}</span>
+                <span tabIndex={tabIndex}>{address}</span>
               </li>
             )}
 
@@ -34,7 +34,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <GiModernCity />
                 </span>
-                <span>{city}</span>
+                <span tabIndex={tabIndex}>{city}</span>
               </li>
             )}
 
@@ -43,7 +43,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <SiGooglemaps />
                 </span>
-                <span>{state}</span>
+                <span tabIndex={tabIndex}>{state}</span>
               </li>
             )}
 
@@ -52,7 +52,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <FaGlobeAmericas />
                 </span>
-                <span>{country}</span>
+                <span tabIndex={tabIndex}>{country}</span>
               </li>
             )}
           </ul>
@@ -67,7 +67,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <TiBeer />
                 </span>
-                <span>{type.toUpperCase()}</span>
+                <span tabIndex={tabIndex + 1}>{type.toUpperCase()}</span>
               </li>
             )}
 
@@ -76,7 +76,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <GrMapLocation />
                 </span>
-                <span>{address}</span>
+                <span tabIndex={tabIndex + 1}>{address}</span>
               </li>
             )}
 
@@ -85,7 +85,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <GiZipper />
                 </span>
-                <span>{postal}</span>
+                <span tabIndex={tabIndex + 1}>{postal}</span>
               </li>
             )}
 
@@ -94,7 +94,7 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                 <span className="icon">
                   <FiPhone />
                 </span>
-                <span>{phone}</span>
+                <span tabIndex={tabIndex + 1}>{phone}</span>
               </li>
             )}
 
@@ -104,7 +104,9 @@ function Card({type, name, address, postal, phone, city, state,country, url}) {
                   <IoIosGlobe />
                 </span>
                 <span className="url">
-                  <a href={url}>Website</a>
+                  <a tabIndex={tabIndex + 1} href={url}>
+                    Website
+                  </a>
                 </span>
               </li>
             )}

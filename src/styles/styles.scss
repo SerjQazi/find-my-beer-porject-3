@@ -68,7 +68,10 @@ width: 0px;
   height: 100%;
   transform-style: preserve-3d;
   transition: all 0.7s ease-in-out;
-  &:hover {
+  &:hover, 
+  &:focus, 
+  &:active,
+  & .backOfCard:focus-within {
     transform: rotateY(180deg);
     }
 }
@@ -102,7 +105,6 @@ h1 {
   line-height: 1;
   margin: 140px 0 25px 0;
   color: #e9c46a;
-  // width: 50%;
     svg {
       transform:translate(15%, 15%);
     }
