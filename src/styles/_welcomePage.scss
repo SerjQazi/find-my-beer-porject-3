@@ -5,17 +5,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 50px;
 }
 
 .welcomeTxt {
   font-family: 'Poiret One', cursive;
   font-weight: bold;
   letter-spacing: 15%;
+  text-align: center;
   font-size: 5rem;
 }
 
 .welcomeIcon {
   display: flex;
+  margin-top: 40px;
 }
 
 .iconOne,
@@ -60,4 +63,10 @@
   50% { opacity: 0; }
   75% { opacity: 1; }
   100% {opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .welcomeTxt {
+    font-size: 3rem;
+  }
 }
