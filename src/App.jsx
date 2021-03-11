@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from './Header';
 import Card from './Card';
 import Footer from './Footer';
+import WelcomePage from './WelcomePage';
 
 function App() {
   //todo: using a useState store the data from the API (brewery)
@@ -45,7 +46,7 @@ function App() {
           {/**before the user has made a selection, disply a message for the user to make a selection 
            * using a ternary operator, display the initial load message that asks the user to pick a state*/}
           {!state
-            ? 'Select a State'
+            ? <WelcomePage />
             : brewery.map((breweries) => {
               //todo: after mapping thru the data received from the API, destructure the info needed
               const {

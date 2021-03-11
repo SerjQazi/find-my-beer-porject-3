@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Baumans&family=Bungee+Shade&family=Poiret+One&display=swap');
+
+.welcomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcomeTxt {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  letter-spacing: 15%;
+  font-size: 5rem;
+}
+
+.welcomeIcon {
+  display: flex;
+}
+
+.iconOne,
+.iconTwo,
+.iconThree {
+  
+  font-size: 8rem;
+  opacity: 0;
+}
+
+.iconOne {
+  animation: ellipsisOne steps(5,end) 2s infinite;
+}
+
+.iconTwo {
+  animation: ellipsisTwo steps(5,end) 2s infinite;
+}
+
+.iconThree {
+  animation: ellipsisThree steps(5,end) 2s infinite;
+}
+
+
+@keyframes ellipsisOne {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  50% { opacity: 1; }
+  75% {opacity: 1; }
+  100% {opacity: 1; }
+}
+@keyframes ellipsisTwo {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 1; }
+  75% {opacity: 1; }
+  100% {opacity: 1; }
+}
+
+@keyframes ellipsisThree {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 0; }
+  75% { opacity: 1; }
+  100% {opacity: 1; }
+}
